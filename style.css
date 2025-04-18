@@ -1,0 +1,182 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+  height: 100vh;
+  flex-wrap: wrap;
+  background: #fdfdfd;
+}
+
+.button-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.btn {
+  padding: 20px 40px;
+  font-size: 24px;
+  border: none;
+  cursor: pointer;
+  color: white;
+  margin: 20px 0;
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+.btn.red { background-color: #e74c3c; }
+.btn.blue { background-color: #3498db; }
+
+.btn:hover {
+  transform: scale(1.1);
+  background-color: #555;
+}
+
+.popup {
+  opacity: 0;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
+  transition: opacity 1s ease-in;
+}
+
+.popup.show {
+  opacity: 1;
+}
+
+.desc {
+  font-size: 16px;
+  text-align: center;
+  max-width: 250px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #333;
+  color: white;
+  padding: 10px 20px;
+}
+
+.logo {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.coin-count {
+  font-size: 18px;
+}
+
+.game-main {
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+  align-items: center;
+  height: 80vh;
+  background: white;
+  animation: fadeInUp 1s ease;
+}
+
+.footer {
+  display: flex;
+  justify-content: flex-end;
+  padding: 20px;
+  background: #444;
+  color: white;
+}
+
+.sign {
+  font-size: 18px;
+}
+
+.back-to-top {
+  position: fixed;
+  top: -60px;
+  left: 0;
+  width: 100%;
+  background: rgba(34, 34, 34, 0.9);
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  font-size: 18px;
+  transition: top 0.5s ease;
+  z-index: 1000;
+  cursor: pointer;
+}
+
+@keyframes fadeInUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* 追加部分（index用） */
+
+.hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+  }
+  
+  .fade-in-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    animation: fadeLeft 1s forwards;
+    font-size: 48px;
+    color: black;
+  }
+  
+  @keyframes fadeLeft {
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  .content-section {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  .bg-img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+  }
+  
+  .description {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 32px;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+  }
+  
+  .content-section.active .bg-img,
+  .content-section.active .description {
+    opacity: 1;
+  }
+  
